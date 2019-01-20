@@ -50,4 +50,11 @@ class Student
       grade = row[2]
       student = self.new(name, grade, id)
     end
+
+    def self.find_by_name(name)
+      rows = DB[:conn].execute("SELECT * FROM students WHERE name=? LIMIT 1", name)
+      rows.map do |row|
+        self.new_from_db(row)
+      end.first
+    end
 end
