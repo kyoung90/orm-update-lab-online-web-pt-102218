@@ -58,7 +58,7 @@ class Student
       end.first
     end
 
-    def update 
+    def update
       # DB[:conn].execute("UPDATE students SET name=?, grade=? WHERE ")
-    end 
+    end
 end
